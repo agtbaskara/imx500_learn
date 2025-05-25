@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dnnParams>
+    <networks>
+        <network name="quantized_mnist_224x224_rgb" ordinal="0" type="">
+            <inputTensors>
+                <inputTensor persistency="1" ordinal="0" name="Placeholder.input.uid1:0" l2Offset="6757760" numOfDimensions="3" bitsPerElement="8" shift="0" scale="0.00390625" format="unsigned">
+                    <dimensions>
+                        <dimension size="3" serializationOrder="2" ordinal="0" padding="0"/>
+                        <dimension size="224" serializationOrder="1" ordinal="1" padding="0"/>
+                        <dimension size="224" serializationOrder="0" ordinal="2" padding="0"/>
+                    </dimensions>
+                </inputTensor>
+            </inputTensors>
+            <outputTensors>
+                <outputTensor ordinal="0" name="transform-17-/fc2/layer/Gemm:0" l2Offset="6913408" numOfDimensions="1" bitsPerElement="8" shift="0" scale="0.25" format="signed">
+                    <dimensions>
+                        <dimension size="10" serializationOrder="0" ordinal="0" padding="0"/>
+                    </dimensions>
+                </outputTensor>
+            </outputTensors>
+        </network>
+    </networks>
+    <l2memory totalSize="8388480" coefficientsSize="845312" reservedMemorySize="1024" networksRuntimeSize="785408"/>
+</dnnParams>

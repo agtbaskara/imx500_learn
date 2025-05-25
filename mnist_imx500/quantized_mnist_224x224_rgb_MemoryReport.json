@@ -1,0 +1,22 @@
+{
+  "Memory Report": {
+    "Name": "quantized_mnist_224x224_rgb",
+    "Runtime Memory Physical Size": "767.00KB",
+    "Model Memory Physical Size": "825.31KB",
+    "Reserved Memory": "1.00KB",
+    "Memory Usage": "1.56MB",
+    "Total Memory Available On Chip": "8.00MB",
+    "Memory Utilization": "20%",
+    "Fit In Chip": true,
+    "Input Persistent": true,
+    "Networks": [
+      {
+        "Hash": "quantized_mnist_224x224_rgb",
+        "Name": "quantized_mnist_224x224_rgb",
+        "Runtime Memory Physical Size": "767.00KB",
+        "Model Memory Physical Size": "825.31KB",
+        "Input Persistence Cost": "151.00KB"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1026 @@
+name: "Sony"
+layer {
+  name: "Placeholder: Placeholder.input.uid1"
+  type: "Placeholder"
+  
+  top: "Placeholder.input.uid1:0"
+    scale_param {
+    "InputShapes": ""
+    "OutputShape": "3x224x224"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "151.00KB"
+    "ScheduleId": "10"
+
+  }
+
+}
+layer {
+  name: "Pad: /conv1/layer/Conv_pad_to1d_0"
+  type: "Pad"
+  bottom: "Placeholder.input.uid1:0"
+  top: "/conv1/layer/Conv_pad_to1d_0:0"
+    scale_param {
+    "InputShapes": "3x224x224"
+    "OutputShape": "3x226x224"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    "HasScratch": "true"
+    
+    "RuntimeMemory": "148.31KB"
+    "ScheduleId": "11"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-4-/conv1/layer/Conv_pad_to1d_0"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pad_to1d_0:0"
+  top: "transform-4-/conv1/layer/Conv_pad_to1d_0:0"
+    scale_param {
+    "InputShapes": "3x226x224"
+    "OutputShape": "3x226x224"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "168.00KB"
+    "ScheduleId": "12"
+
+  }
+
+}
+layer {
+  name: "Pad: /conv1/layer/Conv_pad_to1d_1"
+  type: "Pad"
+  bottom: "transform-4-/conv1/layer/Conv_pad_to1d_0:0"
+  top: "/conv1/layer/Conv_pad_to1d_1:0"
+    scale_param {
+    "InputShapes": "3x226x224"
+    "OutputShape": "3x226x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    "HasScratch": "true"
+    
+    "RuntimeMemory": "169.50KB"
+    "ScheduleId": "13"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-6-/conv1/layer/Conv_pad_to1d_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pad_to1d_1:0"
+  top: "transform-6-/conv1/layer/Conv_pad_to1d_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x226x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "169.50KB"
+    "ScheduleId": "14"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-8-/conv1/layer/Conv_pad_to1d_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pad_to1d_1:0"
+  top: "transform-8-/conv1/layer/Conv_pad_to1d_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x226x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "169.50KB"
+    "ScheduleId": "18"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-10-/conv1/layer/Conv_pad_to1d_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pad_to1d_1:0"
+  top: "transform-10-/conv1/layer/Conv_pad_to1d_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x226x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "169.50KB"
+    "ScheduleId": "22"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-12-/conv1/layer/Conv_pad_to1d_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pad_to1d_1:0"
+  top: "transform-12-/conv1/layer/Conv_pad_to1d_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x226x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "169.50KB"
+    "ScheduleId": "26"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(0;0)_dim_1"
+  type: "StrideSlice"
+  bottom: "transform-6-/conv1/layer/Conv_pad_to1d_1:0"
+  top: "/conv1/layer/Conv_pf(0;0)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "15"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(0;1)_dim_1"
+  type: "StrideSlice"
+  bottom: "transform-8-/conv1/layer/Conv_pad_to1d_1:0"
+  top: "/conv1/layer/Conv_pf(0;1)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "19"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(1;0)_dim_1"
+  type: "StrideSlice"
+  bottom: "transform-10-/conv1/layer/Conv_pad_to1d_1:0"
+  top: "/conv1/layer/Conv_pf(1;0)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "23"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(1;1)_dim_1"
+  type: "StrideSlice"
+  bottom: "transform-12-/conv1/layer/Conv_pad_to1d_1:0"
+  top: "/conv1/layer/Conv_pf(1;1)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x226x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "27"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-5-/conv1/layer/Conv_pf(0;0)_dim_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pf(0;0)_dim_1:0"
+  top: "transform-5-/conv1/layer/Conv_pf(0;0)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "16"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-7-/conv1/layer/Conv_pf(0;1)_dim_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pf(0;1)_dim_1:0"
+  top: "transform-7-/conv1/layer/Conv_pf(0;1)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "20"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-9-/conv1/layer/Conv_pf(1;0)_dim_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pf(1;0)_dim_1:0"
+  top: "transform-9-/conv1/layer/Conv_pf(1;0)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "24"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-11-/conv1/layer/Conv_pf(1;1)_dim_1"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_pf(1;1)_dim_1:0"
+  top: "transform-11-/conv1/layer/Conv_pf(1;1)_dim_1:0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x226"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "84.75KB"
+    "ScheduleId": "28"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(0;0)"
+  type: "StrideSlice"
+  bottom: "transform-5-/conv1/layer/Conv_pf(0;0)_dim_1:0"
+  top: "/conv1/layer/Conv_pf(0;0):0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x113"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "42.38KB"
+    "ScheduleId": "17"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(0;1)"
+  type: "StrideSlice"
+  bottom: "transform-7-/conv1/layer/Conv_pf(0;1)_dim_1:0"
+  top: "/conv1/layer/Conv_pf(0;1):0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x113"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "42.38KB"
+    "ScheduleId": "21"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(1;0)"
+  type: "StrideSlice"
+  bottom: "transform-9-/conv1/layer/Conv_pf(1;0)_dim_1:0"
+  top: "/conv1/layer/Conv_pf(1;0):0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x113"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "42.38KB"
+    "ScheduleId": "25"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv1/layer/Conv_pf(1;1)"
+  type: "StrideSlice"
+  bottom: "transform-11-/conv1/layer/Conv_pf(1;1)_dim_1:0"
+  top: "/conv1/layer/Conv_pf(1;1):0"
+    scale_param {
+    "InputShapes": "3x113x226"
+    "OutputShape": "3x113x113"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "42.38KB"
+    "ScheduleId": "29"
+
+  }
+
+}
+layer {
+  name: "Concat: /conv1/layer/Conv_concat"
+  type: "Concat"
+  bottom: "/conv1/layer/Conv_pf(0;1):0"
+  bottom: "/conv1/layer/Conv_pf(0;0):0"
+  bottom: "/conv1/layer/Conv_pf(1;0):0"
+  bottom: "/conv1/layer/Conv_pf(1;1):0"
+  top: "/conv1/layer/Conv_concat:0"
+    scale_param {
+    "InputShapes": "3x113x113, 3x113x113, 3x113x113, 3x113x113"
+    "OutputShape": "12x113x113"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "169.50KB"
+    "ScheduleId": "30"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-1-/conv1/layer/Conv_concat"
+  type: "Transform"
+  bottom: "/conv1/layer/Conv_concat:0"
+  top: "transform-1-/conv1/layer/Conv_concat:0"
+    scale_param {
+    "InputShapes": "12x113x113"
+    "OutputShape": "12x113x113"
+    "Quantize[mn,mx]": [0, 1.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "169.50KB"
+    "ScheduleId": "31"
+
+  }
+
+}
+layer {
+  name: "Conv2D: /conv1/layer/Conv"
+  type: "Convolution"
+  bottom: "transform-1-/conv1/layer/Conv_concat:0"
+  top: "/Relu:0"
+    scale_param {
+    "InputShapes": "12x113x113, 16x12x2x2, 16"
+    "OutputShape": "16x112x112"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 16
+    "ConstInputs": "/conv1/WeightsSymmetricQuantizer_pf:0"
+    "ConstInputs": "Variable.conv1.layer.bias.uid2:0"
+    "RuntimeMemory": "224.00KB"
+    "ScheduleId": "32"
+
+  }
+  blobs {
+    shape {
+      dim: 16
+      dim: 12
+      dim: 2
+      dim: 2
+    }
+  }
+  blobs {
+    shape {
+      dim: 16
+    }
+  }
+}
+layer {
+  name: "Relu: /Relu"
+  type: "Relu"
+  bottom: "/Relu:0"
+  top: "/Relu:0"
+    scale_param {
+    "InputShapes": "16x112x112"
+    "OutputShape": "16x112x112"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    "ConstInputs": "/conv1/WeightsSymmetricQuantizer_pf:0"
+    "ConstInputs": "Variable.conv1.layer.bias.uid2:0"
+    "RuntimeMemory": "224.00KB"
+    
+  }
+
+}
+layer {
+  name: "Transform: transform-2-(F)/conv1/layer/Conv"
+  type: "Transform"
+  bottom: "/Relu:0"
+  top: "transform-2-(F)/conv1/layer/Conv:0"
+    scale_param {
+    "InputShapes": "16x112x112"
+    "OutputShape": "16x112x112"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "392.00KB"
+    "ScheduleId": "33"
+
+  }
+
+}
+layer {
+  name: "MaxPool: /pool1/MaxPool"
+  type: "MaxPool"
+  bottom: "transform-2-(F)/conv1/layer/Conv:0"
+  top: "/pool1/MaxPool:0"
+    scale_param {
+    "InputShapes": "16x112x112"
+    "OutputShape": "16x56x56"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "98.00KB"
+    "ScheduleId": "34"
+
+  }
+
+}
+layer {
+  name: "Pad: /conv2/layer/Conv_pad_to1d_0"
+  type: "Pad"
+  bottom: "/pool1/MaxPool:0"
+  top: "/conv2/layer/Conv_pad_to1d_0:0"
+    scale_param {
+    "InputShapes": "16x56x56"
+    "OutputShape": "16x58x56"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    "HasScratch": "true"
+    
+    "RuntimeMemory": "101.50KB"
+    "ScheduleId": "35"
+
+  }
+
+}
+layer {
+  name: "Pad: /conv2/layer/Conv_pad_to1d_1"
+  type: "Pad"
+  bottom: "/conv2/layer/Conv_pad_to1d_0:0"
+  top: "/conv2/layer/Conv_pad_to1d_1:0"
+    scale_param {
+    "InputShapes": "16x58x56"
+    "OutputShape": "16x58x58"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    "HasScratch": "true"
+    
+    "RuntimeMemory": "105.13KB"
+    "ScheduleId": "36"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(0;0)_dim_1"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pad_to1d_1:0"
+  top: "/conv2/layer/Conv_pf(0;0)_dim_1:0"
+    scale_param {
+    "InputShapes": "16x58x58"
+    "OutputShape": "16x29x58"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "52.56KB"
+    "ScheduleId": "37"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(0;1)_dim_1"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pad_to1d_1:0"
+  top: "/conv2/layer/Conv_pf(0;1)_dim_1:0"
+    scale_param {
+    "InputShapes": "16x58x58"
+    "OutputShape": "16x29x58"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "52.56KB"
+    "ScheduleId": "40"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(1;0)_dim_1"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pad_to1d_1:0"
+  top: "/conv2/layer/Conv_pf(1;0)_dim_1:0"
+    scale_param {
+    "InputShapes": "16x58x58"
+    "OutputShape": "16x29x58"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "52.56KB"
+    "ScheduleId": "43"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(1;1)_dim_1"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pad_to1d_1:0"
+  top: "/conv2/layer/Conv_pf(1;1)_dim_1:0"
+    scale_param {
+    "InputShapes": "16x58x58"
+    "OutputShape": "16x29x58"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "52.56KB"
+    "ScheduleId": "46"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(0;0)"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pf(0;0)_dim_1:0"
+  top: "/conv2/layer/Conv_pf(0;0):0"
+    scale_param {
+    "InputShapes": "16x29x58"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "26.28KB"
+    "ScheduleId": "38"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(0;1)"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pf(0;1)_dim_1:0"
+  top: "/conv2/layer/Conv_pf(0;1):0"
+    scale_param {
+    "InputShapes": "16x29x58"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "26.28KB"
+    "ScheduleId": "41"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(1;0)"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pf(1;0)_dim_1:0"
+  top: "/conv2/layer/Conv_pf(1;0):0"
+    scale_param {
+    "InputShapes": "16x29x58"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "26.28KB"
+    "ScheduleId": "44"
+
+  }
+
+}
+layer {
+  name: "StrideSlice: /conv2/layer/Conv_pf(1;1)"
+  type: "StrideSlice"
+  bottom: "/conv2/layer/Conv_pf(1;1)_dim_1:0"
+  top: "/conv2/layer/Conv_pf(1;1):0"
+    scale_param {
+    "InputShapes": "16x29x58"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "26.28KB"
+    "ScheduleId": "47"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-13-/conv2/layer/Conv_pf(0;0)"
+  type: "Transform"
+  bottom: "/conv2/layer/Conv_pf(0;0):0"
+  top: "transform-13-/conv2/layer/Conv_pf(0;0):0"
+    scale_param {
+    "InputShapes": "16x29x29"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "14.50KB"
+    "ScheduleId": "39"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-14-/conv2/layer/Conv_pf(0;1)"
+  type: "Transform"
+  bottom: "/conv2/layer/Conv_pf(0;1):0"
+  top: "transform-14-/conv2/layer/Conv_pf(0;1):0"
+    scale_param {
+    "InputShapes": "16x29x29"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "14.50KB"
+    "ScheduleId": "42"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-15-/conv2/layer/Conv_pf(1;0)"
+  type: "Transform"
+  bottom: "/conv2/layer/Conv_pf(1;0):0"
+  top: "transform-15-/conv2/layer/Conv_pf(1;0):0"
+    scale_param {
+    "InputShapes": "16x29x29"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "14.50KB"
+    "ScheduleId": "45"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-16-/conv2/layer/Conv_pf(1;1)"
+  type: "Transform"
+  bottom: "/conv2/layer/Conv_pf(1;1):0"
+  top: "transform-16-/conv2/layer/Conv_pf(1;1):0"
+    scale_param {
+    "InputShapes": "16x29x29"
+    "OutputShape": "16x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "14.50KB"
+    "ScheduleId": "48"
+
+  }
+
+}
+layer {
+  name: "Concat: /conv2/layer/Conv_concat"
+  type: "Concat"
+  bottom: "transform-14-/conv2/layer/Conv_pf(0;1):0"
+  bottom: "transform-15-/conv2/layer/Conv_pf(1;0):0"
+  bottom: "transform-13-/conv2/layer/Conv_pf(0;0):0"
+  bottom: "transform-16-/conv2/layer/Conv_pf(1;1):0"
+  top: "/conv2/layer/Conv_concat:0"
+    scale_param {
+    "InputShapes": "16x29x29, 16x29x29, 16x29x29, 16x29x29"
+    "OutputShape": "64x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "58.00KB"
+    "ScheduleId": "49"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-0-/conv2/layer/Conv_concat"
+  type: "Transform"
+  bottom: "/conv2/layer/Conv_concat:0"
+  top: "transform-0-/conv2/layer/Conv_concat:0"
+    scale_param {
+    "InputShapes": "64x29x29"
+    "OutputShape": "64x29x29"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "52.56KB"
+    "ScheduleId": "50"
+
+  }
+
+}
+layer {
+  name: "Conv2D: /conv2/layer/Conv"
+  type: "Convolution"
+  bottom: "transform-0-/conv2/layer/Conv_concat:0"
+  top: "/Relu_1:0"
+    scale_param {
+    "InputShapes": "64x29x29, 32x64x2x2, 32"
+    "OutputShape": "32x28x28"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 16
+    "ConstInputs": "/conv2/WeightsSymmetricQuantizer_pf:0"
+    "ConstInputs": "Variable.conv2.layer.bias.uid3:0"
+    "RuntimeMemory": "24.50KB"
+    "ScheduleId": "51"
+
+  }
+  blobs {
+    shape {
+      dim: 32
+      dim: 64
+      dim: 2
+      dim: 2
+    }
+  }
+  blobs {
+    shape {
+      dim: 32
+    }
+  }
+}
+layer {
+  name: "Relu: /Relu_1"
+  type: "Relu"
+  bottom: "/Relu_1:0"
+  top: "/Relu_1:0"
+    scale_param {
+    "InputShapes": "32x28x28"
+    "OutputShape": "32x28x28"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    "ConstInputs": "/conv2/WeightsSymmetricQuantizer_pf:0"
+    "ConstInputs": "Variable.conv2.layer.bias.uid3:0"
+    "RuntimeMemory": "24.50KB"
+    
+  }
+
+}
+layer {
+  name: "MaxPool: /pool2/MaxPool"
+  type: "MaxPool"
+  bottom: "/Relu_1:0"
+  top: "/pool2/MaxPool:0"
+    scale_param {
+    "InputShapes": "32x28x28"
+    "OutputShape": "32x14x14"
+    "Quantize[mn,mx]": [0, 8.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "6.13KB"
+    "ScheduleId": "52"
+
+  }
+
+}
+layer {
+  name: "Conv2D: /conv3/layer/Conv"
+  type: "Convolution"
+  bottom: "/pool2/MaxPool:0"
+  top: "/Relu_2:0"
+    scale_param {
+    "InputShapes": "32x14x14, 64x32x3x3, 64"
+    "OutputShape": "64x14x14"
+    "Quantize[mn,mx]": [0, 16.0]
+    "QuantizeBits": 16
+    "ConstInputs": "/conv3/WeightsSymmetricQuantizer:0"
+    "ConstInputs": "Variable.conv3.layer.bias.uid4:0"
+    "RuntimeMemory": "12.25KB"
+    "ScheduleId": "53"
+
+  }
+  blobs {
+    shape {
+      dim: 64
+      dim: 32
+      dim: 3
+      dim: 3
+    }
+  }
+  blobs {
+    shape {
+      dim: 64
+    }
+  }
+}
+layer {
+  name: "Relu: /Relu_2"
+  type: "Relu"
+  bottom: "/Relu_2:0"
+  top: "/Relu_2:0"
+    scale_param {
+    "InputShapes": "64x14x14"
+    "OutputShape": "64x14x14"
+    "Quantize[mn,mx]": [0, 16.0]
+    "QuantizeBits": 8
+    "ConstInputs": "/conv3/WeightsSymmetricQuantizer:0"
+    "ConstInputs": "Variable.conv3.layer.bias.uid4:0"
+    "RuntimeMemory": "12.25KB"
+    
+  }
+
+}
+layer {
+  name: "MaxPool: /pool3/MaxPool"
+  type: "MaxPool"
+  bottom: "/Relu_2:0"
+  top: "/pool3/MaxPool:0"
+    scale_param {
+    "InputShapes": "64x14x14"
+    "OutputShape": "64x7x7"
+    "Quantize[mn,mx]": [0, 16.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "3.06KB"
+    "ScheduleId": "54"
+
+  }
+
+}
+layer {
+  name: "Transform: transform-3-/pool3/MaxPool"
+  type: "Transform"
+  bottom: "/pool3/MaxPool:0"
+  top: "transform-3-/pool3/MaxPool:0"
+    scale_param {
+    "InputShapes": "64x7x7"
+    "OutputShape": "64x7x7"
+    "Quantize[mn,mx]": [0, 16.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "14.00KB"
+    "ScheduleId": "55"
+
+  }
+
+}
+layer {
+  name: "Reshape: /Reshape"
+  type: "Reshape"
+  bottom: "transform-3-/pool3/MaxPool:0"
+  top: "/Reshape:0"
+    scale_param {
+    "InputShapes": "64x7x7"
+    "OutputShape": "3136"
+    "Quantize[mn,mx]": [0, 16.0]
+    "QuantizeBits": 8
+    "HasScratch": "true"
+    
+    "RuntimeMemory": "3.06KB"
+    "ScheduleId": "56"
+
+  }
+
+}
+layer {
+  name: "MatMulBias: /fc1/layer/Gemm"
+  type: "MatMulBias"
+  bottom: "/Reshape:0"
+  top: "/Relu_3:0"
+    scale_param {
+    "InputShapes": "3136, 3136x256, 256"
+    "OutputShape": "256"
+    "Quantize[mn,mx]": [0, 16.0]
+    "QuantizeBits": 16
+    "ConstInputs": "/fc1/WeightsSymmetricQuantizer:0"
+    "ConstInputs": "Variable.fc1.layer.bias.uid5:0"
+    "RuntimeMemory": "256B"
+    "ScheduleId": "57"
+
+  }
+  blobs {
+    shape {
+      dim: 3136
+      dim: 256
+    }
+  }
+  blobs {
+    shape {
+      dim: 256
+    }
+  }
+}
+layer {
+  name: "Relu: /Relu_3"
+  type: "Relu"
+  bottom: "/Relu_3:0"
+  top: "/Relu_3:0"
+    scale_param {
+    "InputShapes": "256"
+    "OutputShape": "256"
+    "Quantize[mn,mx]": [0, 16.0]
+    "QuantizeBits": 8
+    "ConstInputs": "/fc1/WeightsSymmetricQuantizer:0"
+    "ConstInputs": "Variable.fc1.layer.bias.uid5:0"
+    "RuntimeMemory": "256B"
+    
+  }
+
+}
+layer {
+  name: "MatMulBias: /fc2/layer/Gemm"
+  type: "MatMulBias"
+  bottom: "/Relu_3:0"
+  top: "/fc2/layer/Gemm:0"
+    scale_param {
+    "InputShapes": "256, 256x10, 10"
+    "OutputShape": "10"
+    "Quantize[mn,mx]": [-32.0, 32.0]
+    "QuantizeBits": 8
+    "ConstInputs": "/fc2/WeightsSymmetricQuantizer:0"
+    "ConstInputs": "Variable.fc2.layer.bias.uid6:0"
+    "RuntimeMemory": "32B"
+    "ScheduleId": "58"
+
+  }
+  blobs {
+    shape {
+      dim: 256
+      dim: 10
+    }
+  }
+  blobs {
+    shape {
+      dim: 10
+    }
+  }
+}
+layer {
+  name: "Transform: transform-17-/fc2/layer/Gemm"
+  type: "Transform"
+  bottom: "/fc2/layer/Gemm:0"
+  top: "transform-17-/fc2/layer/Gemm:0"
+    scale_param {
+    "InputShapes": "10"
+    "OutputShape": "10"
+    "Quantize[mn,mx]": [-32.0, 32.0]
+    "QuantizeBits": 8
+    
+    "RuntimeMemory": "32B"
+    "ScheduleId": "59"
+
+  }
+
+}
+layer {
+  name: "Output: Output.output.uid7"
+  type: "Output"
+  bottom: "transform-17-/fc2/layer/Gemm:0"
+  
+    scale_param {
+    "InputShapes": "10"
+    
+    
+    
+    "RuntimeMemory": "0B"
+    "ScheduleId": "60"
+
+  }
+
+}
+layer{
+  name: "quantized_mnist_224x224_rgb"
+  type: "MemoryReport"
+  scale_param {
+   
+    RuntimeMemoryPhysicalSize: "767.00KB"
+    ModelMemoryPhysicalSize: "825.31KB"
+    ReservedMemory: "1.00KB"
+    MemoryUsage: "1.56MB"
+    TotalMemoryAvailableOnChip: "8.00MB"
+    MemoryUtilization: "20%"
+    FitInChip: "true"
+    InputPersistent: "true"
+    Hash: "quantized_mnist_224x224_rgb"
+    InputPersistenceCost: "151.00KB"
+      
+   LargestLayer: "transform-2-(F)/conv1/layer/Conv"
+  }
+}
